@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Fashion Marketplace</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .card { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); width: 300px; }
+        h2 { text-align: center; }
+        input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #2c7be5; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1a5fc4; }
+        p { text-align: center; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Sign Up</h2>
+        <!--
+            The "action" and "name" attributes are what the Django backend will read.
+            action="/accounts/signup/" -> Django URL you will create in urls.py
+            name="username", "email", "password", "confirm_password" -> request.POST keys
+        -->
+        <form method="post" action="/accounts/signup/">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="/accounts/signin/">Sign In</a></p>
+    </div>
+</body>
+</html>
