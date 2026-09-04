@@ -16,12 +16,13 @@
 <body>
     <div class="card">
         <h2>Sign Up</h2>
-        <!--
-            The "action" and "name" attributes are what the Django backend will read.
-            action="/accounts/signup/" -> Django URL you will create in urls.py
-            name="username", "email", "password", "confirm_password" -> request.POST keys
-        -->
+        {% if errors %}
+        <p style="color: red;">
+            {% for field, msgs in errors.items %}{% for m in msgs %}{{ m }} {% endfor %}{% endfor %}
+        </p>
+        {% endif %}
         <form method="post" action="/accounts/signup/">
+            {% csrf_token %}
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
