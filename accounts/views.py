@@ -1,3 +1,4 @@
+
 from django import forms
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
@@ -16,8 +17,8 @@ class SignupForm(forms.Form):
 class SigninForm(forms.Form):
     username = forms.CharField(max_length=150)
     password = forms.CharField(widget=forms.PasswordInput)
-
-
+    
+    
 def signup(request):
     if request.method == "POST":
         form = SignupForm(request.POST)

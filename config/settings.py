@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-y%=!h%=pxvmnvc(&3t_a(+u15%f9@jor_i96yfy@jpa$gl37xq"
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -79,6 +80,8 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+DATABASES ={}
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 
 
 # Password validation
