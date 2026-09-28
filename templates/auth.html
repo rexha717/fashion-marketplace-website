@@ -1,0 +1,26 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if screen == 'signup' %}Sign Up{% elif screen == 'logout' %}Sign Out{% else %}Sign In{% endif %} — VELLURÉ</title>
+    <meta name="description" content="Sign in to VELLURÉ to follow your orders and saved pieces.">
+    <link rel="icon" href="/static/landing/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{% static 'auth/auth.css' %}">
+    <style>
+        /* Critical shell styles so the screen never flashes unstyled. */
+        html, body { margin: 0; min-height: 100%; background: oklch(14% .004 285); color: oklch(94% .008 85); }
+    </style>
+    <script type="module" src="{% static 'auth/auth.js' %}" defer></script>
+</head>
+<body>
+    <div id="root" data-screen="{{ screen }}"></div>
+    <noscript>
+        <p style="font-family: sans-serif; padding: 2rem; text-align: center;">
+            This page needs JavaScript. Please enable it and reload.
+        </p>
+    </noscript>
+</body>
+</html>

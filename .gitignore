@@ -12,8 +12,12 @@ db.sqlite3
 staticfiles/
 media/
 
-# Project data (JSON database)
-data/db.json
+# Node / Vite
+node_modules/
+frontend/.vite/
+
+# Build output (rebuilt with `npm run build`)
+static/auth/
 
 # IDE / OS
 .vscode/
