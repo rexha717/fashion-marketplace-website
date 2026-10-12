@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VELLURÉ auth (dev)</title>
+  </head>
+  <body>
+    <!--
+      Build/dev entry only. In production Django serves templates/auth.html
+      and this file is not used; the bundle is mounted by that template.
+      Override ?screen= to preview a different screen in dev.
+    -->
+    <div id="root" data-screen="signin"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const params = new URLSearchParams(location.search)
+      if (params.get('screen')) {
+        document.getElementById('root').dataset.screen = params.get('screen')
+      }
+    </script>
+  </body>
+</html>
